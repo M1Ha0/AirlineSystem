@@ -39,12 +39,14 @@ namespace AirlineClient.Views
 
         private void ShowError(string message)
         {
+            if (TxtError == null) return;
             TxtError.Text = message;
             TxtError.Visibility = Visibility.Visible;
         }
 
         private void ClearError()
         {
+            if (TxtError == null) return;
             TxtError.Text = string.Empty;
             TxtError.Visibility = Visibility.Collapsed;
         }
