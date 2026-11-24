@@ -1,0 +1,28 @@
+<Window x:Class="AirlineClient.Views.ManifestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Полетный манифест" Height="480" Width="620"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+    <Border Background="{StaticResource GlassWindowBg}" BorderBrush="{StaticResource GlassWindowBorder}" BorderThickness="1.5" CornerRadius="16" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <Grid Margin="22">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="0,0,0,12">
+                <TextBlock Text="Полетная ведомость (Манифест)" FontSize="18" FontWeight="Bold" Foreground="#0C4A6E"/>
+                <Button Style="{StaticResource CloseBtnStyle}" HorizontalAlignment="Right" Click="Close_Click"/>
+            </Grid>
+
+            <Border Grid.Row="1" Background="#E6FFFFFF" BorderBrush="{StaticResource GlassCardBorder}" BorderThickness="1" CornerRadius="10" Padding="14">
+                <TextBox x:Name="TxtManifest" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                         FontFamily="Consolas" FontSize="12" Background="Transparent" BorderThickness="0" Height="Auto" VerticalContentAlignment="Top"/>
+            </Border>
+
+            <Button Grid.Row="2" Content="Закрыть" Style="{StaticResource BlueBtnStyle}" Width="110" HorizontalAlignment="Right" Margin="0,12,0,0" Click="Close_Click"/>
+        </Grid>
+    </Border>
+</Window>

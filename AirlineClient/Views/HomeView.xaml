@@ -1,0 +1,41 @@
+<UserControl x:Class="AirlineClient.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <Grid>
+        <StackPanel VerticalAlignment="Top" Margin="8">
+            <Border Background="{StaticResource GlassCardBg}" BorderBrush="{StaticResource GlassCardBorder}" BorderThickness="1" CornerRadius="14" Padding="24" Margin="0,0,0,18">
+                <StackPanel>
+                    <TextBlock Text="{Binding WelcomeTitle}" FontSize="22" FontWeight="Bold" Foreground="#0C4A6E"/>
+                    <TextBlock Text="{Binding RoleInfo}" FontSize="14" Foreground="#475569" Margin="0,6,0,0"/>
+                    <TextBlock Text="Используйте левое меню для управления расписанием рейсов, назначения летных бригад и ведения базы сотрудников." FontSize="13" Foreground="#64748B" TextWrapping="Wrap" Margin="0,12,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <UniformGrid Columns="3">
+                <Border Background="{StaticResource GlassCardBg}" BorderBrush="{StaticResource GlassCardBorder}" BorderThickness="1" CornerRadius="12" Padding="18" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Всего рейсов в базе" FontSize="13" Foreground="#475569"/>
+                        <TextBlock Text="{Binding TotalFlights}" FontSize="28" FontWeight="Bold" Foreground="#0284C7" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="{StaticResource GlassCardBg}" BorderBrush="{StaticResource GlassCardBorder}" BorderThickness="1" CornerRadius="12" Padding="18" Margin="5,0">
+                    <StackPanel>
+                        <TextBlock Text="Готовы к вылету" FontSize="13" Foreground="#475569"/>
+                        <TextBlock Text="{Binding ReadyFlights}" FontSize="28" FontWeight="Bold" Foreground="#059669" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="{StaticResource GlassCardBg}" BorderBrush="{StaticResource GlassCardBorder}" BorderThickness="1" CornerRadius="12" Padding="18" Margin="10,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Сотрудников в штате" FontSize="13" Foreground="#475569"/>
+                        <TextBlock Text="{Binding TotalCrew}" FontSize="28" FontWeight="Bold" Foreground="#0369A1" Margin="0,6,0,0"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+        </StackPanel>
+    </Grid>
+</UserControl>
